@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --main-bg-color: #ffffff;
+    --card-bg-color: #fafafa;
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #e74c3c;
+    --text-color: #2c3e50;
+    --hint-color: #7f8c8d;
+    --border-color: #ecf0f1;
+    --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.03);
+    --border-radius: 8px;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 40px 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cipher-section {
+    margin-bottom: 50px;
+}
+
+.hint {
+    font-style: italic;
+    color: var(--hint-color);
+    margin-bottom: 20px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    display: inline-block;
+}
+
+.task {
+    margin-bottom: 30px;
+}
+
+.task:last-child {
+    margin-bottom: 0;
+}
+
+.encrypted {
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+    padding: 0;
+    cursor: default;
+}
+
+.encrypted p {
+    font-weight: 500;
+    color: var(--accent-color);
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    letter-spacing: 0.2px;
+    line-height: 1.6;
+}
+
+#scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scroll-top.visible {
+    opacity: 0.8;
+    transform: translateY(0);
+}
+
+#scroll-top:hover {
+    opacity: 1;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 768px) {
+    body {
+        padding: 30px 0;
+    }
+    
+    .container {
+        width: 85%;
+    }
+    
+    h1 {
+        margin-bottom: 30px;
+    }
+    
+    .cipher-section {
+        margin-bottom: 40px;
+    }
+    
+    .hint {
+        margin-bottom: 15px;
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 0;
+    }
+    
+    .container {
+        width: 90%;
+    }
+    
+    h1 {
+        margin-bottom: 25px;
+    }
+    
+    h2 {
+        margin-bottom: 10px;
+    }
+    
+    .cipher-section {
+        margin-bottom: 30px;
+    }
+    
+    .task {
+        margin-bottom: 25px;
+    }
+    
+    #scroll-top {
+        width: 36px;
+        height: 36px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 18px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 360px) {
+    .container {
+        width: 92%;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+    }
+    
+    .task {
+        margin-bottom: 20px;
+    }
+}
+
+/* Для устройств с темной темой */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-bg-color: #121212;
+        --card-bg-color: #1e1e1e;
+        --primary-color: #ecf0f1;
+        --secondary-color: #e1e1e1;
+        --accent-color: #ff6b6b;
+        --text-color: #e1e1e1;
+        --hint-color: #a4b0be;
+        --border-color: #2c3e50;
+    }
+} 
